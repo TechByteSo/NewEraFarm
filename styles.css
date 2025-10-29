@@ -388,3 +388,36 @@ body {
 .fade-in {
     animation: fadeInUp 0.8s ease-out;
 }
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 4.625rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    color: var(--accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    outline: none;
+}
+
+.scroll-to-top:focus {
+    outline: none;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.3rem 1rem rgba(83, 0, 0, 0.4);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}

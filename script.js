@@ -43,3 +43,21 @@ document.querySelectorAll('.section-title, .team-member, .service-card, .cta-but
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.hero-content').classList.add('fade-in');
 });
+
+// Стрелка вверх
+const scrollButton = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        scrollButton.classList.add('show');
+    } else {
+        scrollButton.classList.remove('show');
+    }
+});
+
+scrollButton.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

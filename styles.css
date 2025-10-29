@@ -19,7 +19,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Хедер */
 .header {
     background: var(--primary);
     padding: 1rem 2rem;
@@ -77,7 +76,15 @@ body {
     opacity: 0.7;
 }
 
-/* Главный экран */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .hero {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--primary) 0%, #600000 100%);
@@ -137,7 +144,6 @@ body {
     color: var(--primary);
 }
 
-/* Секции */
 .section {
     padding: 6rem 2rem;
     max-width: 1200px;
@@ -152,7 +158,6 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-/* О нас */
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,7 +185,6 @@ body {
     font-size: 1.5rem;
 }
 
-/* Услуги */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -233,7 +237,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* Контакты */
 .contacts {
     background: var(--primary);
     color: var(--accent);
@@ -280,7 +283,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Футер */
 .footer {
     background: var(--dark);
     color: var(--accent);
@@ -288,10 +290,25 @@ body {
     text-align: center;
 }
 
-/* Адаптив */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .hero-tags {
@@ -315,6 +332,7 @@ body {
 
     .hero {
         padding: 2rem 1rem;
+        min-height: 80vh;
     }
 
     .contact-grid {
@@ -325,9 +343,37 @@ body {
         width: 180px;
         height: 180px;
     }
+
+    .hero-logo {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
 }
 
-/* Анимации */
+@media (max-width: 320px) {
+    .hero {
+        padding: 1rem;
+        min-height: 70vh;
+    }
+    
+    .section {
+        padding: 3rem 1rem;
+    }
+    
+    .team-member, .service-card {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section {
+        padding: 5rem 2rem;
+    }
+    
+    .hero-logo {
+        font-size: clamp(3rem, 6vw, 5rem);
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;

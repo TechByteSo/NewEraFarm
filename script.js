@@ -1,4 +1,13 @@
-// Плавный скролл по якорям
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('active');
+    });
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -8,14 +17,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Кнопка ХОЧУ
 document.querySelector('.cta-button').addEventListener('click', function() {
     document.querySelector('#contacts').scrollIntoView({
         behavior: 'smooth'
     });
 });
 
-// Анимация появления элементов при скролле
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -33,7 +40,6 @@ document.querySelectorAll('.section-title, .team-member, .service-card, .cta-but
     observer.observe(el);
 });
 
-// Добавляем класс для элементов, которые должны анимироваться при загрузке
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.hero-content').classList.add('fade-in');
 });

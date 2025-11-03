@@ -17,12 +17,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-document.querySelector('.cta-button').addEventListener('click', function() {
-    document.querySelector('#contacts').scrollIntoView({
-        behavior: 'smooth'
-    });
-});
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -36,7 +30,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.section-title, .team-member, .service-card, .cta-button, .qr-container, .contact-info').forEach(el => {
+document.querySelectorAll('.section-title, .team-member, .mission-content, .point, .qr-container, .contact-info').forEach(el => {
     observer.observe(el);
 });
 
@@ -44,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.hero-content').classList.add('fade-in');
 });
 
-// Стрелка вверх
 const scrollButton = document.querySelector('.scroll-to-top');
 
 window.addEventListener('scroll', function() {

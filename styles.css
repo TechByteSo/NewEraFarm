@@ -20,6 +20,7 @@ body {
     font-size: 1.1rem;
 }
 
+/* Хедер и навигация */
 .header {
     background: var(--primary);
     padding: 1.2rem 2.5rem;
@@ -86,6 +87,7 @@ body {
     cursor: pointer;
 }
 
+/* Главный экран */
 .hero {
     min-height: 100vh;
     background: linear-gradient(135deg, var(--primary) 0%, #600000 100%);
@@ -145,6 +147,7 @@ body {
     color: var(--primary);
 }
 
+/* Общие стили секций */
 .section {
     padding: 7rem 2.5rem;
     max-width: 1300px;
@@ -154,11 +157,12 @@ body {
 .section-title {
     text-align: center;
     font-size: clamp(2.3rem, 5vw, 3.5rem);
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
     color: var(--primary);
     font-family: 'Playfair Display', serif;
 }
 
+/* Секция "Наша команда" */
 .about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -211,6 +215,7 @@ body {
     font-weight: bold;
 }
 
+/* Секция "Философия" */
 .mission-content {
     text-align: center;
     max-width: 1200px;
@@ -220,14 +225,14 @@ body {
 .mission-intro {
     font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     color: var(--primary);
     line-height: 1.6;
 }
 
 .mission-main {
     font-size: 1.3rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.8;
 }
 
@@ -235,7 +240,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-    margin: 3.5rem 0;
+    margin: 2rem 0;
 }
 
 .point {
@@ -272,10 +277,12 @@ body {
     font-size: 1.6rem;
     font-weight: bold;
     color: var(--primary);
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     font-family: 'Playfair Display', serif;
+    line-height: 1.4;
 }
 
+/* Секция "Контакты" */
 .contacts {
     background: var(--primary);
     color: var(--accent);
@@ -313,23 +320,20 @@ body {
     overflow: hidden;
 }
 
-.qr-link {
-    display: block;
+.qr-link, .qr-image {
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    overflow: hidden;
+    object-fit: cover;
+}
+
+.qr-link {
+    display: block;
     transition: transform 0.3s ease;
 }
 
 .qr-link:hover {
     transform: scale(1.05);
-}
-
-.qr-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .qr-text {
@@ -356,6 +360,7 @@ body {
     font-size: 1.1rem;
 }
 
+/* Футер */
 .footer {
     background: var(--dark);
     color: var(--accent);
@@ -364,7 +369,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* iPad Mini, Air, Pro и Surface Duo - вертикальная раскладка */
+/* Адаптив для планшетов */
 @media (max-width: 1180px) {
     .philosophy-points {
         grid-template-columns: 1fr;
@@ -390,6 +395,7 @@ body {
     }
 }
 
+/* Адаптив для мобильных */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -455,6 +461,11 @@ body {
     .about-grid {
         grid-template-columns: 1fr;
     }
+    
+    .mission-cta {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+    }
 }
 
 @media (max-width: 320px) {
@@ -472,6 +483,7 @@ body {
     }
 }
 
+/* Анимации */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -487,6 +499,7 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
+/* Стрелка вверх */
 .scroll-to-top {
     position: fixed;
     bottom: 4.625rem;
@@ -504,10 +517,6 @@ body {
     font-size: 1.7rem;
     transition: all 0.3s ease;
     z-index: 1000;
-    outline: none;
-}
-
-.scroll-to-top:focus {
     outline: none;
 }
 

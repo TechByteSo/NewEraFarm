@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Базовые настройки страницы -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>НОВЭРА ФАРМ</title>
+    
+    <!-- Подключение шрифтов Google -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение CSS файла -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Шапка сайта с навигацией -->
     <header class="header">
         <nav class="nav">
+            <!-- Блок с логотипом -->
             <div class="logo-container">
                 <img src="./Images/mishkaWEB.webp" alt="НОВЭРА ФАРМ" class="logo-img">
                 <div class="logo-text">
@@ -17,23 +24,31 @@
                     <span class="logo-subtitle">Since 2025</span>
                 </div>
             </div>
+            
+            <!-- Основное меню навигации -->
             <div class="nav-links">
                 <a href="#mission">Миссия</a>
                 <a href="#about">Кто мы</a>
                 <a href="#contacts">Контакты</a>
             </div>
+            
+            <!-- Кнопка бургер-меню для мобильных -->
             <button class="menu-toggle">☰</button>
         </nav>
     </header>
 
+    <!-- Главный экран (Hero section) -->
     <section class="hero">
         <div class="hero-content fade-in">
+            <!-- Основной логотип и заголовок -->
             <div class="hero-logo">
                 <span class="since">Since 2025</span>
                 НОВЭРА<br>
                 ФАРМ
                 <span class="subtitle">Новая эра ассоциативной фармакологии</span>
             </div>
+            
+            <!-- Теги-кнопки для быстрой навигации -->
             <div class="hero-tags">
                 <div class="tag">Наша философия</div>
                 <div class="tag">Герои команды</div>
@@ -42,12 +57,17 @@
         </div>
     </section>
 
+    <!-- Секция "Наша философия" -->
     <section id="mission" class="section mission">
         <h2 class="section-title fade-in">Наша философия</h2>
         <div class="mission-content fade-in">
+            <!-- Вступительный текст -->
             <p class="mission-intro">Давайте начистоту: традиционные конспекты усыпляют лучше, чем снотворное. А зубрежка названий препаратов вызывает больше стресса, чем сам экзамен.</p>
+            
+            <!-- Основной посыл -->
             <p class="mission-main">Мы здесь, чтобы объявить войну скуке и стрессу! При соблюдении всех академических нюансов</p>
             
+            <!-- Три карточки с принципами философии -->
             <div class="philosophy-points">
                 <div class="point">
                     <h3>Взрываем шаблоны</h3>
@@ -63,44 +83,56 @@
                 </div>
             </div>
             
+            <!-- Призыв к действию -->
             <p class="mission-cta">Присоединяйтесь к Новой Эре. Учитесь. Улыбайтесь. Помните.</p>
         </div>
     </section>
 
-
+    <!-- Секция "Наша команда" -->
     <section id="about" class="section">
         <h2 class="section-title fade-in">Наша команда</h2>
         <div class="about-grid">
+            <!-- Карточка члена команды 1 -->
             <div class="team-member fade-in">
                 <h3>Варвара</h3>
                 <p class="role">Координатор</p>
                 <p>Кто держит нити управления. Пока идеи генерируются, она превращает их в четкий план и следит, чтобы мы не забыли поесть и сдать проект в срок.</p>
                 <p class="superpower">Суперсила — знать ответ на вопрос «А мы успеем?»</p>
             </div>
+            
+            <!-- Карточка члена команды 2 -->
             <div class="team-member fade-in">
                 <h3>Анна</h3>
                 <p class="role">Волшебница-Оформитель</p>
                 <p>Человек, который превращает наши бредовые идеи в конфетку. Она берёт сырую мысль, два крутых визуала и щепотку настроения — и на выходе получается шедевр.</p>
                 <p class="superpower">Суперсила – сногсшибательный эффект с первого взгляда</p>
             </div>
+            
+            <!-- Карточка члена команды 3 -->
             <div class="team-member fade-in">
                 <h3>Ксения</h3>
                 <p class="role">Мозг команды</p>
                 <p>Если фармакология — это тёмный лес, то Ксения — наш главный следопыт. Она знает каждую тропинку, каждого «зверя» в виде комплексной темы.</p>
                 <p class="superpower">Суперсила — критический взгляд со всех научных сторон</p>
             </div>
+            
+            <!-- Карточка члена команды 4 -->
             <div class="team-member fade-in">
                 <h3>Маргарита</h3>
                 <p class="role">Генератор Идей</p>
                 <p>Наша креативная бомба замедленного действия. Она смотрит на бета-блокатор и видит в нём зайца, который так испугался, что у него замерло сердце.</p>
                 <p class="superpower">Суперсила — молниеносная реакция связывания препарата с Вашим настроением</p>
             </div>
+            
+            <!-- Карточка члена команды 5 -->
             <div class="team-member fade-in">
                 <h3>Анастасия</h3>
                 <p class="role">Трезвый Взгляд</p>
                 <p>Наш внутренний Оценщик и Аналитик. Пока мы все в восторге от новой идеи, Анастасия задаёт единственный важный вопрос: «А это точно сработает?»</p>
                 <p class="superpower">Суперсила — критик и лучший друг одновременно</p>
             </div>
+            
+            <!-- Карточка члена команды 6 -->
             <div class="team-member fade-in">
                 <h3>Андрей</h3>
                 <p class="role">Тихий Гений</p>
@@ -110,17 +142,22 @@
         </div>
     </section>
 
+    <!-- Секция "Контакты" -->
     <section id="contacts" class="section contacts">
         <h2 class="section-title fade-in">Контакты</h2>
         <div class="contact-grid">
+            <!-- Блок с QR-кодом -->
             <div class="qr-container fade-in">
                 <div class="qr-code">
+                    <!-- Кликабельный QR-код с ссылкой на Telegram -->
                     <a href="https://t.me/noverafarm" target="_blank" class="qr-link">
                         <img src="./Images/QR CodeWEB.webp" alt="QR код Телеграм" class="qr-image">
                     </a>
                 </div>
                 <p class="qr-text">♥Присоединяйся и получи 1 файл в подарок♥</p>
             </div>
+            
+            <!-- Блок с контактной информацией -->
             <div class="contact-info fade-in">
                 <h3>Свяжитесь с нами</h3>
                 <p><strong>Сотрудничество/поддержка:</strong> @annbk15 (Телеграмм СММ-менеджера)</p>
@@ -130,11 +167,15 @@
         </div>
     </section>
 
+    <!-- Подвал сайта -->
     <footer class="footer">
-        <p>© 2025 НОВЭРА ФАРМ. Новая эра ассоциативной фармакологии</p>
+        <p>2025 НОВЭРА ФАРМ. Новая эра ассоциативной фармакологии</p>
     </footer>
 
+    <!-- Кнопка для прокрутки наверх -->
     <button class="scroll-to-top">↑</button>
+    
+    <!-- Подключение JavaScript файла -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,55 +1,57 @@
+/* ===== ПЕРЕМЕННЫЕ ЦВЕТОВ ===== */
 :root {
-    --primary: #530000;
-    --accent: #ffded1;
-    --dark: #1a1a1a;
-    --light: #ffffff;
+    --primary: #530000;    /* Основной бордовый цвет */
+    --accent: #ffded1;     /* Светло-персиковый акцентный цвет */
+    --dark: #1a1a1a;       /* Темный цвет для футера */
+    --light: #ffffff;      /* Белый цвет фона */
 }
 
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Чтобы padding и border включались в ширину/высоту */
 }
 
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace; /* Основной шрифт */
     background: var(--light);
     color: var(--dark);
-    line-height: 1.7;
-    overflow-x: hidden;
-    font-size: 1.1rem;
+    line-height: 1.7; /* Межстрочный интервал */
+    overflow-x: hidden; /* Запрет горизонтального скролла */
+    font-size: 1.1rem; /* Базовый размер шрифта */
 }
 
-/* Хедер и навигация */
+/* ===== ШАПКА САЙТА ===== */
 .header {
     background: var(--primary);
     padding: 1.2rem 2.5rem;
-    position: fixed;
+    position: fixed; /* Фиксированная позиция */
     width: 100%;
     top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    z-index: 1000; /* Поверх всего контента */
+    backdrop-filter: blur(10px); /* Размытие фона */
 }
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Лого слева, меню справа */
     align-items: center;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.2rem; /* Расстояние между логотипом и текстом */
 }
 
 .logo-img {
-    height: 55px;
+    height: 55px; /* Высота логотипа */
 }
 
 .logo-text {
     color: var(--accent);
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif; /* Красивый шрифт для лого */
     font-size: 1.4rem;
     line-height: 1.2;
 }
@@ -62,24 +64,24 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2.2rem;
+    gap: 2.2rem; /* Расстояние между пунктами меню */
 }
 
 .nav-links a {
     color: var(--accent);
     text-decoration: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s; /* Плавное изменение прозрачности */
     font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 1px; /* Разрежение букв */
 }
 
 .nav-links a:hover {
-    opacity: 0.7;
+    opacity: 0.7; /* Эффект при наведении */
 }
 
 .menu-toggle {
-    display: none;
+    display: none; /* Скрыто на десктопе */
     background: none;
     border: none;
     color: var(--accent);
@@ -87,9 +89,9 @@ body {
     cursor: pointer;
 }
 
-/* Главный экран */
+/* ===== ГЛАВНЫЙ ЭКРАН (HERO SECTION) ===== */
 .hero {
-    min-height: 100vh;
+    min-height: 100vh; /* На всю высоту экрана */
     background: linear-gradient(135deg, var(--primary) 0%, #600000 100%);
     display: flex;
     align-items: center;
@@ -97,16 +99,16 @@ body {
     text-align: center;
     color: var(--accent);
     padding: 5rem 2.5rem;
-    margin-top: 70px;
+    margin-top: 70px; /* Компенсация фиксированного хедера */
     position: relative;
 }
 
 .hero-logo {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-size: clamp(3.5rem, 9vw, 7rem); /* Адаптивный размер шрифта */
     line-height: 1.1;
     margin-bottom: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Тень текста */
 }
 
 .hero-logo .since {
@@ -130,13 +132,13 @@ body {
     justify-content: center;
     gap: 2.2rem;
     margin: 2.5rem 0;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Перенос на новую строку при нехватке места */
 }
 
 .tag {
     padding: 1rem 1.7rem;
     border: 1px solid var(--accent);
-    border-radius: 25px;
+    border-radius: 25px; /* Скругленные углы */
     font-size: 1rem;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -147,26 +149,26 @@ body {
     color: var(--primary);
 }
 
-/* Общие стили секций */
+/* ===== ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ СЕКЦИЙ ===== */
 .section {
     padding: 7rem 2.5rem;
     max-width: 1300px;
-    margin: 0 auto;
+    margin: 0 auto; /* Центрирование */
 }
 
 .section-title {
     text-align: center;
-    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    font-size: clamp(2.3rem, 5vw, 3.5rem); /* Адаптивный заголовок */
     margin-bottom: 2rem;
     color: var(--primary);
     font-family: 'Playfair Display', serif;
 }
 
-/* Секция "Наша команда" */
+/* ===== СЕКЦИЯ "НАША КОМАНДА" ===== */
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Автоматическая сетка */
+    gap: 2.5rem; /* Расстояние между карточками */
 }
 
 .team-member {
@@ -178,11 +180,11 @@ body {
     border: 1px solid transparent;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.2rem; /* Расстояние между элементами внутри карточки */
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Эффект поднятия при наведении */
     border-color: var(--primary);
 }
 
@@ -211,11 +213,11 @@ body {
     padding: 1rem;
     border-radius: 12px;
     font-size: 1rem;
-    margin-top: auto;
+    margin-top: auto; /* Прижимает к низу карточки */
     font-weight: bold;
 }
 
-/* Секция "Философия" */
+/* ===== СЕКЦИЯ "ФИЛОСОФИЯ" ===== */
 .mission-content {
     text-align: center;
     max-width: 1200px;
@@ -238,7 +240,7 @@ body {
 
 .philosophy-points {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки на десктопе */
     gap: 2.5rem;
     margin: 2rem 0;
 }
@@ -251,7 +253,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 320px;
+    min-height: 320px; /* Минимальная высота карточки */
 }
 
 .point h3 {
@@ -259,7 +261,7 @@ body {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
-    min-height: 3.5rem;
+    min-height: 3.5rem; /* Фиксированная высота заголовка */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,7 +270,7 @@ body {
 .point p {
     font-size: 1.05rem;
     line-height: 1.6;
-    flex-grow: 1;
+    flex-grow: 1; /* Занимает все доступное пространство */
     display: flex;
     align-items: center;
 }
@@ -282,7 +284,7 @@ body {
     line-height: 1.4;
 }
 
-/* Секция "Контакты" */
+/* ===== СЕКЦИЯ "КОНТАКТЫ" ===== */
 .contacts {
     background: var(--primary);
     color: var(--accent);
@@ -317,14 +319,14 @@ body {
     color: var(--primary);
     font-weight: bold;
     font-size: 1.1rem;
-    overflow: hidden;
+    overflow: hidden; /* Обрезает содержимое за границами */
 }
 
 .qr-link, .qr-image {
     width: 100%;
     height: 100%;
     border-radius: 15px;
-    object-fit: cover;
+    object-fit: cover; /* Заполняет контейнер без искажений */
 }
 
 .qr-link {
@@ -333,7 +335,7 @@ body {
 }
 
 .qr-link:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Увеличение при наведении */
 }
 
 .qr-text {
@@ -360,7 +362,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Футер */
+/* ===== ПОДВАЛ САЙТА ===== */
 .footer {
     background: var(--dark);
     color: var(--accent);
@@ -369,10 +371,10 @@ body {
     font-size: 1.1rem;
 }
 
-/* Адаптив для планшетов */
+/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТОВ ===== */
 @media (max-width: 1180px) {
     .philosophy-points {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Одна колонка на планшетах */
         gap: 2rem;
         max-width: 600px;
         margin-left: auto;
@@ -395,7 +397,7 @@ body {
     }
 }
 
-/* Адаптив для мобильных */
+/* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -410,11 +412,11 @@ body {
     }
 
     .nav-links.active {
-        display: flex;
+        display: flex; /* Показывает меню при активации */
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Показывает бургер-меню */
     }
 
     .hero-tags {
@@ -427,7 +429,7 @@ body {
     }
 
     .logo-text {
-        display: none;
+        display: none; /* Скрывает текстовый логотип на мобилках */
     }
 
     body {
@@ -459,7 +461,7 @@ body {
     }
 
     .about-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Одна колонка на мобилках */
     }
     
     .mission-cta {
@@ -483,15 +485,15 @@ body {
     }
 }
 
-/* Анимации */
+/* ===== АНИМАЦИИ ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(30px); /* Начальная позиция */
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0); /* Конечная позиция */
     }
 }
 
@@ -499,7 +501,7 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
-/* Стрелка вверх */
+/* ===== КНОПКА "НАВЕРХ" ===== */
 .scroll-to-top {
     position: fixed;
     bottom: 4.625rem;
@@ -509,15 +511,15 @@ body {
     background: var(--primary);
     color: var(--accent);
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Круглая кнопка */
     cursor: pointer;
-    display: none;
+    display: none; /* Скрыта по умолчанию */
     align-items: center;
     justify-content: center;
     font-size: 1.7rem;
     transition: all 0.3s ease;
     z-index: 1000;
-    outline: none;
+    outline: none; /* Убирает обводку при фокусе */
 }
 
 .scroll-to-top:hover {
@@ -526,5 +528,5 @@ body {
 }
 
 .scroll-to-top.show {
-    display: flex;
+    display: flex; /* Показывает кнопку при скролле */
 }

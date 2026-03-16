@@ -1,66 +1,56 @@
-// Бургер-меню для мобильных устройств
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
-
-// Закрытие меню при клике на ссылку
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.remove('active');
+// Плавный скролл по якорям
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// Плавная прокрутка к якорям
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault(); // Отменяет стандартное поведение
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth' // Плавная анимация
+// Бургер-меню на мобильных
+(function() {
+    var toggle = document.querySelector('.header__menu-toggle');
+    var links = document.querySelector('.header__nav-links');
+    if (toggle && links) {
+        toggle.addEventListener('click', function() {
+            links.classList.toggle('active');
         });
-    });
-});
-
-// Настройки для Intersection Observer
-const observerOptions = {
-    threshold: 0.1, // Срабатывает когда 10% элемента видно
-    rootMargin: '0px 0px -50px 0px' // Отступ снизу
-};
-
-// Анимация появления элементов при скролле
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in'); // Добавляет класс анимации
-        }
-    });
-}, observerOptions);
-
-// Наблюдаемые элементы
-document.querySelectorAll('.section-title, .team-member, .mission-content, .point, .qr-container, .contact-info').forEach(el => {
-    observer.observe(el);
-});
-
-// Анимация главного экрана при загрузке
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.hero-content').classList.add('fade-in');
-});
-
-// Кнопка "Наверх"
-const scrollButton = document.querySelector('.scroll-to-top');
-
-// Показ/скрытие кнопки при скролле
-window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        scrollButton.classList.add('show');
-    } else {
-        scrollButton.classList.remove('show');
+        links.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                links.classList.remove('active');
+            });
+        });
     }
-});
+})();
 
-// Прокрутка наверх при клике
-scrollButton.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+// Кнопка «Наверх»
+(function() {
+    var btn = document.querySelector('.scroll-to-top');
+    if (!btn) return;
+    window.addEventListener('scroll', function() {
+        btn.classList.toggle('show', window.pageYOffset > 300);
     });
-});
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// Анимация появления блоков при скролле
+(function() {
+    var options = {
+        threshold: 0.12,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+            }
+        });
+    }, options);
+    document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+        observer.observe(el);
+    });
+})();
